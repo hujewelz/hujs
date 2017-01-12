@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="./hu.css">
+  <style type="text/css">
+    #container {
+      width: 100%;
+      height: 1500px;
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    
+  </div>
+  <script src="./hu.js"></script>
+  <script>
+    // new HU({
+    //   pullRefresh: {
+    //     el: '#container',
+    //     footer: {
+    //       callback: pullup
+    //     }
+        
+    //   }
+    // });
+
+    hu.init({
+      pullRefresh: {
+        el: '#container',
+        footer: {
+          callback: pullup
+        }
+        
+      }
+    });
+
+    function pullup() {
+      setTimeout(function() {
+        console.log('加载完成!!');
+        hu.pullRefresh.nomoreData();
+      }, 1000);
+    }
+    
+    
+  </script>
+</body>
+</html>
